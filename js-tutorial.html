@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        button strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="increment()">
+    	count: <strong id="count">0</strong>
+    </button>
+</body>
+<script>
+    function increment() {
+    	const btnEle = document.getElementById("btn");
+        const ele = document.getElementById("count");
+    	let count = ele.innerText;
+    	count = parseInt(count);
+    	count++;
+    	ele.innerText = count;
+
+        if(count%2==0) {
+            btnEle.style.color = "white";
+            btnEle.style.backgroundColor = "black";
+        }else {
+            btnEle.style.color = "black";
+            btnEle.style.backgroundColor = "white";
+        }
+    }
+</script>
+</html>
