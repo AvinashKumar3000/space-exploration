@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .game-area {
+            height: 100px;
+            width: 500px;
+            padding: 10px;
+            border-radius: 2px;
+            background-color: powderblue;
+            box-shadow: 3px 3px 5px gray;
+        }
+
+        .box {
+            background-color: silver;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            box-shadow: inset 5px 5px 5px gray;
+            text-align: right;
+            width: 90%;
+            padding: 20px;
+            text-shadow: 2px 2px 1px gray;
+        }
+
+        .dog,
+        .bone {
+            animation-duration: 0.4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: both;
+            animation-direction: alternate;
+        }
+
+        .dog {
+            animation-name: dancing-dog;
+            color: brown;
+
+        }
+
+        .bone {
+            margin-right: 2px;
+            color: white;
+            animation-name: floating-bone;
+        }
+        p {
+            text-align: center;
+            font-family: monospace;
+        }
+
+        @keyframes dancing-dog {
+            from {
+                transform: rotate(-5deg);
+            }
+
+            to {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes floating-bone {
+            from {
+                text-shadow: 2px 2px 1px gray;
+            }
+
+            to {
+                text-shadow: 4px 4px 1px gray;
+            }
+        }
+    </style>
+</head>
+
+<body onload="setup()">
+    <h1>dog game</h1>
+    <div class="game-area">
+        <div class="box">
+            <i id="dog" onclick="eatBone()" class="dog fa-solid fa-dog"></i>
+            <span id="bones" class="bones">
+                <i class="bone fa-solid fa-bone"></i>
+                <i class="bone fa-solid fa-bone"></i>
+                <i class="bone fa-solid fa-bone"></i>
+                <i class="bone fa-solid fa-bone"></i>
+            </span>
+        </div>
+        <p>The no of bones ate by dog is [ <span id="count">0</span> ]</p>
+    </div>
+    <script>
+        let initial_bone_count = 10;
+        let bone_count = initial_bone_count ;
+        let dog_size = 10;
+        const bonesEle = document.getElementById('bones');
+        const countEle = document.getElementById('count');
+        const dogEle = document.getElementById('dog');
+
+        function setup() {
+            dogEle.style.fontSize = dog_size + 'px';
+            const list = '<i class="bone fa-solid fa-bone"></i>'.repeat(bone_count);
+            bonesEle.innerHTML = list;
+        }
+
+        function eatBone() {
+            if (bone_count > 0) {
+                bone_count--;
+                const list = '<i class="bone fa-solid fa-bone"></i>'.repeat(bone_count);
+                bonesEle.innerHTML = list;
+                countEle.innerText = initial_bone_count - bone_count;
+            
+                dog_size += 2;
+                dogEle.style.fontSize = dog_size + 'px';
+            }
+        }
+    </script>
+</body>
+
+</html>
