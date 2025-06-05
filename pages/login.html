@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffffff;
+            background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(204, 204, 204, 1) 35%, rgba(33, 33, 33, 1) 100%);
+        }
+
+        .container {
+            background-color: white;
+            height: 50vh;
+            width: 50vw;
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 1px 1px 20px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container flex flex-col items-center justify-center shadow-2xl bg-white/80 backdrop-blur-md">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-8 flex items-center gap-3">
+            <i class="fa-solid fa-rocket text-indigo-600"></i>
+            Welcome to Space Exploration
+        </h1>
+        <form onsubmit="handleSubmit(event)" class="w-full max-w-sm flex flex-col gap-6">
+            <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                required
+                class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition text-gray-700 bg-white/90 shadow-sm"
+            >
+            <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                required
+                class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition text-gray-700 bg-white/90 shadow-sm"
+            >
+            <button
+                type="submit"
+                class="mt-2 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold text-lg shadow-lg hover:from-indigo-600 hover:to-blue-600 transition"
+            >
+                <i class="fa-solid fa-right-to-bracket mr-2"></i>
+                Sign In
+            </button>
+        </form>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const email = event.target[0].value;
+            const password = event.target[1].value;
+            if(email === "user@gmail.com" && password === "Pass@123") {
+                alert("validation successful");
+                window.location.href = "dashboard.html";
+            }else {
+                alert("username or password is wrong");
+            }
+        }
+    </script>
+</body>
+
+</html>
