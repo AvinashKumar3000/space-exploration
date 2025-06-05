@@ -33,6 +33,12 @@
             flex-direction: column;
             justify-content: flex-end;
         }
+        .col:nth-child(odd){
+            animation:  smooth-wind-blow 10s infinite alternate ease-in-out;
+        }
+        .col:nth-child(even){
+            animation: smooth-wind-blow-2 10s infinite alternate ease-in-out;   
+        }
 
         .col:active {
             animation-name: shake-effect;
@@ -54,6 +60,34 @@
             60% { transform: translate(2px, 2px) rotate(-2deg); }
             80% { transform: translate(2px, -2px) rotate(2deg); }
             100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        @keyframes smooth-wind-blow {
+            0% { transform: translateX(0); }
+            10% { transform: translateX(-2px); }
+            20% { transform: translateX(1px); }
+            30% { transform: translateX(-2px); }
+            40% { transform: translateX(1px); }
+            50% { transform: translateX(-0.2px); }
+            60% { transform: translateX(2px); }
+            70% { transform: translateX(-1px); }
+            80% { transform: translateX(3px); }
+            90% { transform: translateX(-2px); }
+            100% { transform: translateX(0); }
+        }
+
+         @keyframes smooth-wind-blow-2 {
+            0% { transform: translateX(0); }
+            10% { transform: translateX(-2px); }
+            20% { transform: translateX(-2px); }
+            30% { transform: translateX(2px); }
+            40% { transform: translateX(1px); }
+            50% { transform: translateX(-0.2px); }
+            60% { transform: translateX(1px); }
+            70% { transform: translateX(0); }
+            80% { transform: translateX(3px); }
+            90% { transform: translateX(-1px); }
+            100% { transform: translateX(-2px); }
         }
     </style>
 </head>
