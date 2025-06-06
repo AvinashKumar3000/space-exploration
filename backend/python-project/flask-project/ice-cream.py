@@ -5,36 +5,36 @@ app = Flask(__name__)
 
 ice_cream_flavours = {
     "Classic": [
-        "Vanilla",
-        "Chocolate",
-        "Strawberry",
-        "Butterscotch",
-        "Coffee"
+        "🍦 Vanilla",
+        "🍫 Chocolate",
+        "🍓 Strawberry",
+        "🍮 Butterscotch",
+        "☕ Coffee"
     ],
     "Fruity": [
-        "Mango",
-        "Black Currant",
-        "Lychee",
-        "Pineapple",
-        "Tender Coconut"
+        "🥭 Mango",
+        "🍇 Black Currant",
+        "🍈 Lychee",
+        "🍍 Pineapple",
+        "🥥 Tender Coconut"
     ],
     "Nutty": [
-        "Kesar Pista",
-        "Roasted Almond",
-        "Walnut Fudge",
-        "Peanut Butter Swirl"
+        "🌼 Kesar Pista",
+        "🌰 Roasted Almond",
+        "🥜 Walnut Fudge",
+        "🥄 Peanut Butter Swirl"
     ],
     "Exotic": [
-        "Tiramisu",
-        "Matcha Green Tea",
-        "Salted Caramel",
-        "Blueberry Cheesecake",
-        "Red Velvet"
+        "🍰 Tiramisu",
+        "🍵 Matcha Green Tea",
+        "🧂🍬 Salted Caramel",
+        "🫐🍰 Blueberry Cheesecake",
+        "❤️🍰 Red Velvet"
     ],
     "Sugar-Free": [
-        "Vanilla (SF)",
-        "Chocolate (SF)",
-        "Mango (SF)"
+        "🍦 Vanilla (SF)",
+        "🍫 Chocolate (SF)",
+        "🥭 Mango (SF)"
     ]
 }
 
