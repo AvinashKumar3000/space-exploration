@@ -143,12 +143,17 @@
         }
 
         function generateScoreBoard() {
-            let max_height = 0;
-            let max_height_index = 0;
-            // to do
+            let min_height = heights[0];
+            let min_height_index = 0;
+            for (let i = 1; i < heights.length; i++) {
+            if (heights[i] < min_height) {
+                min_height = heights[i];
+                min_height_index = i;
+            }
+            }
 
-            let score = `My panda ate ${ate_count} number of bamboo's so far 😋 🐼`;
-            let bambooStatus = `The maximum height of bamboo is ${max_height} which is in ${max_height_index} index.`;
+            let score = `My panda ate ${ate_count} bamboo${ate_count === 1 ? '' : 's'} so far 😋 🐼`;
+            let bambooStatus = `The minimum height of bamboo is ${min_height} at column ${min_height_index + 1}.`;
             document.getElementById('score-text').innerText = score;
             document.getElementById('bamboo-status-text').innerText = bambooStatus;
         }
